@@ -1,0 +1,57 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+int main() {
+    cout << "Task 1. Integer27" <<endl;
+    int day0fYear;
+    cout <<"Enter the day of the year K (1-365): ";
+    cin >> day0fYear;
+    
+    int day0fWeek = (day0fYear + 5) % 7 + 1;
+    
+    cout << "Result: day of the week is number " << day0fWeek << endl;
+    cout << "(where 1 - Mon, . . . , 6 - Sat, 7 - Sun)\n\n" << endl;
+    
+    cout << "Task 2. Boolean 6" <<endl;
+    int valA, valB, valC;
+    cout << "Enter integer A: ";
+    cin >> valA;
+    cout << "Enter integer B : ";
+    cin >> valB;
+    cout << "Enter integer C: ";
+    cin >> valC;
+    
+    bool checkInequality = (valA < valB) && (valB < valC);
+    
+    cout << "Statement A < B < C is: " << boolalpha << checkInequality << "\n" << endl;
+    
+    
+    cout << "Task 3. Expression 25" << endl;
+    double xVal;
+    cout << "Enter real value for x: ";
+    cin >> xVal;
+    
+    const double PI_CONST = 3.14159265358979323846;
+    
+    double degToRad = 29.0 * PI_CONST /180.0;
+    double innerArg = fabs(2.0 * xVal) + degToRad;
+    
+    double numeratorPart = pow(pow(xVal, 6),0.2) + sqrt(2.0 * fabs (xVal));
+    
+    double sineValue = sin(innerArg);
+    double denominatorLog = log(sineValue * sineValue) / log(3.0);
+    
+    double firstTerm = numeratorPart / denominatorLog;
+    
+    double tangentVal = tan (xVal);
+    double secondTerm = (PI_CONST * fabs(3.0 * tangentVal * tangentVal)) / 5.0;
+    
+    double resultY = firstTerm + secondTerm;
+    
+    cout << "Function value y = " << resultY << endl;
+    
+    return 0;
+    
+    
+}
