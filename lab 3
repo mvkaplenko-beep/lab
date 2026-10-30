@@ -1,0 +1,97 @@
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void run_task1();
+void run_task2();
+void run_task3();
+
+int main() {
+    int choice;
+    do {
+        cout << "\nMenu:\n";
+        cout << "1. Task If5\n";
+        cout << "2. Task If26\n";
+        cout << "3. Task Geom26\n";
+        cout << "0. Exit\n";
+        cout << "Select option: ";
+        if (!(cin >> choice)) {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            continue;
+        }
+    
+    if (choice == 1) run_task1();
+    else if (choice == 2) run_task2();
+    else if (choice == 3) run_task3();
+    
+    if (choice != 0) {
+        cout << "\nPress Enter to continue. . .";
+        cin.ignore();
+        cin.get();
+    }
+} while (choice != 0);
+
+return 0;
+}
+
+void run_task1() {
+    int nums [3];
+    cout << "Enter 3 numbers: ";
+    for(int i = 0; i < 3; i++) {
+        cin >> nums[i];
+    }
+    
+    int pos = 0, neg = 0;
+    for(int i = 0; i < 3; i++) {
+        if (nums[i] > 0) pos++;
+        else if (nums[i] < 0) neg++;
+    }
+    
+    cout << "Positive: " << pos << endl;
+    cout << "Negative: " << neg << endl;
+}
+
+void run_task2() {
+    cout << "\nTask if26\n";
+    double x;
+    cout << "Enter x: ";
+    cin >> x;
+    
+    double res;
+    if (x <= 0) {
+        res = -x;
+    } else if (x < 2) {
+        res = x * x;
+    }  else {
+        res = 4;
+    }
+    cout << "Result: " << res << endl;
+
+    cout << "Result: " << res << endl;
+  }
+ void run_task3() {
+     cout << "\nTask Geom26\n";
+     double a, r, x, y;
+     
+     cout << "Enter square side (a): ";
+     cin >> a;
+     cout << "Enter circle radius (r): ";
+     cin >> r;
+     cout << "Enter point x and y: ";
+     cin >> x >> y;
+     
+     bool insideSquare = (x >= -a/2 && x <=a/2 && y >= -a/2 && y <= a/2);
+     bool insideCircle = (x*x + y*y <= r*r);
+     bool targetQuarter = (x <= 0 && y >= 0);
+     
+     if (insideSquare && insideCircle && targetQuarter) {
+         cout << "Point belongs to the area.\n";
+     } else {
+         cout << "Point does not belong to the area.\n";
+     }
+    }
+    
